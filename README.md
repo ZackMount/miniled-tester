@@ -27,6 +27,11 @@ A lightweight web-based tool for testing MiniLED display backlight behaviour: lo
 - Modern browser with HDR support (e.g. Chrome 120+, Edge) for true HDR; the app still runs in SDR.
 - Fullscreen recommended for accurate visual assessment.
 
+## Quick Start
+
+Try MiniLED Tester online without deployment:
+https://miniledtester.zackmount.blog/
+
 ## Run locally
 
 ```bash
