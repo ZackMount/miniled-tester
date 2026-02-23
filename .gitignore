@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# scripts (build tooling; not used at runtime; generated HDR data lives in src/app)
+scripts/

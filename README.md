@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# MiniLED Tester
 
-## Getting Started
+A lightweight web-based tool for testing MiniLED display backlight behaviour: local dimming zones, HDR brightness steps, blooming (halo) detection, and black-level uniformity.
 
-First, run the development server:
+## Features
+
+- **Zone grid**  
+  Visualise a theoretical backlight zone layout (presets for common zone counts such as 576, 1152, 2304, 2596, or custom columns x rows). The grid is for reference only; real hardware zone geometry may differ.
+
+- **Zone scan animation**  
+  Horizontal, vertical, or single-zone sweep to observe local dimming response.
+
+- **HDR brightness steps**  
+  Step pattern using PQ-encoded AVIF images for nominal brightness from 0 to 10000 nits. Presets include SDR range, DisplayHDR 400/600/1000/1400, and custom comma-separated nits. Optional window size (e.g. 1% window) for peak brightness testing.
+
+- **Blooming test**  
+  Bright shapes (circle, square, cross) on a black background, with optional simulated glow and auto bounce, to check halo and blooming.
+
+- **Starfield test**  
+  Animated starfield for black-level and uniformity checks; star count, size, speed, and twinkle rate are configurable.
+
+- **Scene HDR**  
+  Optional HDR highlight (configurable nits) for grid, animation, blooming, and starfield elements to stress local dimming.
+
+## Requirements
+
+- Modern browser with HDR support (e.g. Chrome 120+, Edge) for true HDR; the app still runs in SDR.
+- Fullscreen recommended for accurate visual assessment.
+
+## Run locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000). For production:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+npm start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Tech stack
 
-## Learn More
+- Next.js (App Router), React, TypeScript
+- Tailwind CSS
+- Icons: [Bootstrap Icons](https://icons.getbootstrap.com/) via `react-icons` (MIT)
 
-To learn more about Next.js, take a look at the following resources:
+## License
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+MIT.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Author
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+ZackMount – [GitHub](https://github.com/ZackMount)
